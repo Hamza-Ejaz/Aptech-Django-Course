@@ -1,0 +1,91 @@
+
+
+
+
+
+{% extends "main.html" %}
+
+{% block main %}
+
+
+<!-- <style>
+
+    .view a{
+        float: right;
+        margin-top: 5%;
+    }
+
+    table{
+        /* height: 50vh; */
+        margin-bottom: 10%;
+        background: rgba(19, 17, 17, 0.822);
+        width: 50%;
+        border: 1;
+    }
+
+    th , td{
+        text-align: center;
+        border-bottom: 1px solid rgba(177, 175, 175, 0.842);
+        font-size: 16px;
+        color: #ddd;
+    }
+
+    tr:hover{
+        background-color: rgba(80, 79, 79, 0.192);
+    } -->
+
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col md-12" id="show_table">
+
+            <div class="add">
+
+                <a href="./view.html" class="btn btn-primary" >Add New Task</a>
+            </div>
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Task</th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for tasks in us %}
+                        <tr>
+
+                            <td>{{tasks[0]}}</td>
+                            <td>{{tasks[1]}}</td>
+                            <td>{{tasks[2]}}</td>
+                           <td> <a href="/edituser/{{tasks[0]}}" class="btn btn-warning">Edit</a> |
+                            <a href="#" class="btn btn-danger" onclick="return confirm('Are you sure to delete')">Delete</a></td>
+
+                        </tr>
+                        <tbody>
+                        {% endfor %}
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+// window.onload=()=>{
+// window.scroll(0,600);
+
+// }
+
+
+</script>
+
+{% endblock %}    
